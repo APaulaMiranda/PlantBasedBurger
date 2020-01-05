@@ -1,11 +1,39 @@
 <h2>Eat-da-Plant_Burger-Yo!</h2>
+
+<img src="https://experience-fresh.panasonic.eu/wp-content/uploads/2018/12/Panini-colorati-per-burger-enjoy-1.jpg"
+    alt="Tasty vegan burgers">
+
+<div class="write-non-devoured-burgers">
+    <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        <li>
+            {{ plant_burger_name }}
+            <button class="devour-the-burger" data-id="{{id}}">Devour it!</button>
+        </li>
+        {{/unless}}
+        {{/each}}
+    </ul>
+</div>
+
+
+
+<div class="write-devoured-burgers">
+    <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <li>{{ plant_burger_name }}</li>
+        {{/if}}
+        {{/each}}
+    </ul>
+</div>
+
 <form class="create-form">
 
-    <img src="https://experience-fresh.panasonic.eu/wp-content/uploads/2018/12/Panini-colorati-per-burger-enjoy-1.jpg"
-        alt="Tasty vegan burgers">
-
     <div class="form-group">
-        <input type="text" id="ca" name="name">
-        <input type="button" id="ca" name="name" value="Submit">
+        <input type="text" id="burgerName" name="name">
+        <input type="submit" value="Submit">
         <P>Enter a burger you want to eat. Click the "submit" button.</P>
     </div>
+
+</form>

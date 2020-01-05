@@ -9,6 +9,8 @@ var connection = mysql.createConnection({
     database: "plant_burgers_db"
 });
 
+
+
 // Make connection.
 connection.connect(function (err) {
     if (err) {

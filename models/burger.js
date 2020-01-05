@@ -1,5 +1,7 @@
 var orm = require("../config/orm.js");
 
+
+
 var burger = {
 
     getPlantBurgers: function (callback) {
@@ -12,5 +14,7 @@ var burger = {
         orm.editPlantBurger(plantBurger, function (result) { callback(result) });
     },
 }
+
+
 
 module.exports = burger;

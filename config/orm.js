@@ -15,8 +15,9 @@ var orm = {
     addPlantBurger: function (plantBurger, callback) {
         var s = "INSERT INTO " + tableName + " (plant_burger_name, devoured) VALUES (?,?)";
         plantBurger.devoured = false;
+        console.log(plantBurger)
         connection.query(s, [
-            plantBurger.plant_burger_name, plantBurger.devoured
+            plantBurger.name, plantBurger.devoured
         ], function (err, result) {
 
             callback(result);
@@ -24,7 +25,7 @@ var orm = {
         });
     },
 
-    editPlantBurgers: function (plantBurger, callback) {
+    editPlantBurger: function (plantBurger, callback) {
         var s = "UPDATE " + tableName + " SET devoured=? WHERE id=?";
 
         connection.query(s, [
